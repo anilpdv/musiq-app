@@ -15,7 +15,9 @@ function SongsList(props) {
   useEffect(() => {}, []);
 
   const getPlayingSong = async (song, id) => {
-    const resp = await Axios.get(`http://localhost:4000/api/related/` + id);
+    const resp = await Axios.get(
+      `https://warm-springs-86808.herokuapp.com/api/related/` + id
+    );
     console.log('realted songs', resp.data);
     setRelatedSongs(resp.data);
     setSong(song);

@@ -75,7 +75,7 @@ function Song(props) {
     name: title,
     singer: author,
     cover: props.song.snippet.thumbnails.default.url,
-    musicSrc: `http://localhost:4000/api/download/${
+    musicSrc: `https://warm-springs-86808.herokuapp.com/api/download/${
       props.song.id.videoId
     }/song/${title.trim()}`
   };

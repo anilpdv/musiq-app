@@ -23,9 +23,9 @@ function removeTitle(songs) {
   return filteredSongs;
 }
 
-const baseUrl = 'http://localhost:4000';
+const baseUrl = 'https://warm-springs-86808.herokuapp.com';
 const Input = () => {
-  const [value, setValue] = useState('ariana');
+  const [value, setValue] = useState('');
 
   const [songs, setSongs] = useState([]);
 
