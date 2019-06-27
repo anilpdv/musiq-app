@@ -1,0 +1,53 @@
+* {
+    padding: 0
+}
+
+.song-title {
+    font-size: 16px;
+    letter-spacing: 0.015em;
+    font-family: Nunito;
+    padding-top: 10px;
+    font-weight: 700;
+    word-spacing: 0.1rem;
+    text-transform: capitalize;
+
+}
+
+.fa-play {
+    transition: 1.5s;
+}
+
+.music-player {
+    font-family: Nunito;
+    font-weight: 700;
+}
+
+.play {
+    cursor: pointer;
+}
+
+.react-jinke-music-player-main .music-player-panel .panel-content .progress-bar-content .audio-title {
+    transition: color 350ms cubic-bezier(0.43, -0.1, 0.16, 1.1);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: inline-block;
+    max-width: 400px;
+    font-size: 16px;
+    font-family: Nunito;
+    font-weight: 700;
+}
+
+
+
+div .play:hover {}
+
+.song-title:hover {
+    font-size: 16px;
+    letter-spacing: 0.015em;
+    font-family: Nunito;
+    padding-top: 10px;
+    font-weight: 700;
+    word-spacing: 0.1rem;
+    text-transform: capitalize;
+}

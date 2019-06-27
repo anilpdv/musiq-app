@@ -1,0 +1,50 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+.side-nav {
+    z-index: 1;
+    top: 0;
+    width: 231px;
+    left: 0;
+}
+
+
+
+.side-nav a {
+    display: block;
+    text-decoration: none;
+    color: #cccccc;
+    font-family: Nunito;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.015em;
+    padding-left: 35px;
+    margin-bottom: 20px;
+
+}
+
+.fas {
+    padding: 14px;
+    font-size: 20px;
+}
+
+.fab {
+    font-size: 40px;
+    margin: 40px 40px;
+}
+
+.logo {
+    padding: 10px;
+
+    font-family: Montserrat;
+
+}
+
+.side-nav a:hover {
+    border-left: 3px solid green;
+
+}

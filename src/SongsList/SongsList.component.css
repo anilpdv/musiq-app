@@ -1,0 +1,20 @@
+* {
+    padding: 0;
+
+}
+
+.background-image {
+    overflow: hidden;
+}
+
+.h-full {
+    height: 100vh;
+}
+
+.loading {
+    height: 100vh;
+}
+
+.SongList-margin {
+    margin-left: 200px;
+}

@@ -3,9 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/core": "^10.0.14",
+    "axios": "^0.19.0",
+    "html-entities": "^1.2.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "react-icons": "^3.7.0",
+    "react-jinke-music-player": "^4.3.5",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "3.0.1",
+    "react-spinners": "^0.5.4",
+    "react-spring": "^8.0.25",
+    "recompose": "^0.30.0",
+    "sweetalert": "^2.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
