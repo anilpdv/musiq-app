@@ -33,7 +33,7 @@ export function transformPlayable(items) {
       name: title,
       singer: author,
       cover: item.snippet.thumbnails.default.url,
-      musicSrc: `http://localhost:4000/api/download/${
+      musicSrc: `https://warm-springs-86808.herokuapp.com/api/download/${
         item.id.videoId
       }/song/${title}`
     };
