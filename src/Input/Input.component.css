@@ -6,10 +6,9 @@
     position: fixed;
     top: 0;
     right: 0;
-    left: 230px;
+    left: 220px;
     background: #282828;
     color: white;
-
     z-index: 1;
 }
 
@@ -26,4 +25,14 @@
     padding-top: 150px;
     padding-left: 100px;
     overflow: hidden;
+}
+
+
+@media (max-width:800px) {
+    #docsearch {
+        position: fixed;
+        left: 0;
+        right: 0;
+    }
+
 }

@@ -30,8 +30,8 @@ export function transformPlayable(items) {
     const { author, title } = removeb(item.snippet.title);
     ids.push(item.id.videoId);
     return {
-      name: title,
-      singer: author,
+      name: title.substring(0, 20),
+      singer: author.substring(0, 10),
       cover: item.snippet.thumbnails.default.url,
       musicSrc: `https://warm-springs-86808.herokuapp.com/api/download/${
         item.id.videoId

@@ -56,7 +56,7 @@ function SongsList(props) {
               />
             </animated.div>
           </div>
-          <div className="ml-20 sm:w-3/4 lg:w-3/4">
+          <div className="song-list-titles  sm:w-3/4 lg:w-3/4">
             {trails.map((dprops, index) => (
               <animated.div key={props.songs[index].id.videoId} style={props}>
                 <Song
@@ -72,7 +72,7 @@ function SongsList(props) {
           </div>
         </div>
       ) : (
-        <p className="loading my-56"> loading...</p>
+        <p className="part-loading my-56"> loading...</p>
       )}
     </>
   );

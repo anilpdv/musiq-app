@@ -45,8 +45,8 @@ const Input = () => {
   };
 
   return (
-    <div className="text-center ">
-      <div className="Search">
+    <div className="text-center  ">
+      <div className="Search ">
         <form
           action="
     "

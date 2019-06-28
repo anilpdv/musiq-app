@@ -1,18 +1,25 @@
 * {
-    padding: 0;
-
+  padding: 0;
 }
 
 .background-image {
-    overflow: hidden;
+  overflow: hidden;
 }
 
-
-
-.loading {
-    height: 100vh;
+.part-loading {
+  height: 100vh;
 }
 
 .SongList-margin {
-    margin-left: 200px;
+  margin-left: 200px;
+}
+
+.song-list-titles {
+  margin-left: 80px;
+}
+
+@media (max-width: 800px) {
+  .SongList-margin {
+    margin-left: 0;
+  }
 }

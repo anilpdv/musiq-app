@@ -1,5 +1,5 @@
 * {
-    padding: 0
+    padding: 0;
 }
 
 .song-title {
@@ -10,7 +10,6 @@
     font-weight: 700;
     word-spacing: 0.1rem;
     text-transform: capitalize;
-
 }
 
 .fa-play {
@@ -38,9 +37,55 @@
     font-weight: 700;
 }
 
+.react-jinke-music-player-main .music-player-panel {
+    background-color: #282828;
+    font-family: Nunito;
+    color: white;
+    font-weight: 700;
+}
+
+.audio-lists-panel-header .title {
+    font-weight: 700;
+    color: white;
+    font-family: Nunito;
+}
+
+.audio-lists-panel-header .delete-btn {
+    padding-top: 10px;
+    padding-right: 10px;
+}
+
+.audio-lists-panel-header .close-btn {
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.react-jinke-music-player-mobile-toggle .text-center .group .loading {
+    display: none;
+}
+
+.audio-lists-panel.show {
+    border-radius: 40px;
+}
+
+.audio-lists-panel-header .line {
+    margin: 10px;
+}
+
+.audio-lists-panel-content {
+    font-family: Nunito;
+    font-weight: 700;
+}
+
+.audio-lists-panel-content .audio-item:hover {
+    background: #eeeeee;
+    color: black;
+}
 
 
-div .play:hover {}
+.audio-lists-panel-content .audio-item .player-name {
+    padding-right: 18px;
+}
 
 .song-title:hover {
     font-size: 16px;
@@ -50,4 +95,9 @@ div .play:hover {}
     font-weight: 700;
     word-spacing: 0.1rem;
     text-transform: capitalize;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    display: inline-block;
 }

@@ -3,15 +3,14 @@
     margin: 0;
 }
 
-
 .side-nav {
     z-index: 1;
     top: 0;
-    width: 231px;
+    width: 225px;
     left: 0;
+    overflow: hidden;
+    z-index: 9;
 }
-
-
 
 .side-nav a {
     display: block;
@@ -24,7 +23,6 @@
     letter-spacing: 0.015em;
     padding-left: 35px;
     margin-bottom: 20px;
-
 }
 
 .fas {
@@ -41,10 +39,17 @@
     padding: 10px;
 
     font-family: Montserrat;
-
 }
 
 .side-nav a:hover {
     border-left: 3px solid green;
+    border-left-width: 2px;
 
+
+}
+
+@media (max-width: 800px) {
+    .side-nav {
+        display: none;
+    }
 }

@@ -5,7 +5,7 @@ import './NavBar.component.css';
 function NavBar() {
   return (
     <div
-      className="side-nav bg-black fixed h-full w-200  font-mono "
+      className="side-nav  bg-black fixed h-full lg:w-200 sm:w-0   "
       id="side-menu"
     >
       <i class="fab fa-napster text-white">

@@ -156,7 +156,7 @@ export const defaultOptions = {
   // audio list panel show text of the playlist has no songs [ type `String` | ReactNode  default 'no music']
   notContentText: 'no musiq',
 
-  panelTitle: 'playlist',
+  panelTitle: 'relatedSongs',
 
   defaultPlayMode: 'order',
 
@@ -179,7 +179,7 @@ export const defaultOptions = {
   showMiniModeCover: true,
 
   //audio playing progress is show of the "mini"  mode
-  showMiniProcessBar: false,
+  showMiniProcessBar: true,
 
   //audio controller is can be drag of the "mini" mode     [type `Boolean` default `true`]
   drag: true,
@@ -197,7 +197,7 @@ export const defaultOptions = {
   showPlay: true,
 
   //reload button display of the audio player panel   [type `Boolean` default `true`]
-  showReload: false,
+  showReload: true,
 
   //download button display of the audio player panel   [type `Boolean` default `true`]
   showDownload: true,
