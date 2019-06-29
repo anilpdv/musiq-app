@@ -44,17 +44,18 @@ function SongsList(props) {
   return (
     <>
       {props.songs[0] ? (
-        <div className=" flex  p-30 h-full SongList-margin">
+        <div className=" flex   h-full SongList-margin">
           <div>
-            <animated.div style={contentProps}>
-              <div
-                className="rounded-full mt-10 bg-cover h-64 w-64 background-image sm:hidden lg:inline-block"
-                style={{
-                  backgroundImage:
-                    'url(' + props.songs[0].snippet.thumbnails.high.url + ')'
-                }}
-              />
-            </animated.div>
+            <div className="  SongList-image-container " />
+            <img
+              className="SongList-image shadow-lg"
+              src={
+                'http://img.youtube.com/vi/' +
+                props.songs[0].id.videoId +
+                '/maxresdefault.jpg'
+              }
+              alt=""
+            />
           </div>
           <div className="song-list-titles  sm:w-3/4 lg:w-3/4">
             {trails.map((dprops, index) => (

@@ -10,10 +10,11 @@ body {
 
 
   /* background-color: #f7fafc;*/
-  background: rgb(2, 0, 36);
-  background: linear-gradient(339deg, rgba(2, 0, 36, 1) 0%, rgba(47, 66, 80, 1) 35%, rgba(0, 212, 255, 1) 100%);
-  ;
+  /*  background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(39, 199, 171, 1) 0%, rgba(70, 143, 197, 1) 90%);
+*/
+  background: #0E0E0E;
 }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",

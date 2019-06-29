@@ -83,8 +83,8 @@ function Song(props) {
 
   //dispatch({ type: 'ADD', song: song })
   return (
-    <div className=" flex py-5 px-0   play p-10">
-      <section
+    <div className=" py-5 px-0   play ">
+      <div
         className="flex"
         id="fja"
         href="#"
@@ -95,7 +95,7 @@ function Song(props) {
         {' '}
         {props.iPlayable ? (
           <>
-            <i className="mr-4">
+            <i className="mr-3 ">
               <BounceLoader
                 css={override}
                 sizeUnit={'px'}
@@ -108,19 +108,22 @@ function Song(props) {
         ) : icon ? (
           <animated.i
             style={contentProps}
-            className="fas fa-play text-white w-4"
+            className="fas fa-play text-gray-200 w-4"
           />
         ) : (
-          <i className="fas fa-music text-white w-4" />
+          <i className="fas fa-music text-gray-200 w-4" />
         )}
         <p
-          className="song-title text-white pl-16  "
+          className="song-title text-white pl-5"
           onMouseOver={changeIcon}
           onMouseLeave={changeIcon}
         >
-          {title} - {author}
+          {title}{' '}
         </p>
-      </section>
+      </div>
+      <div className="Song-author">
+        <p className="">{author}</p>
+      </div>
       {props.iPlayable ? (
         songs.length > 1 ? (
           <ReactJkMusicPlayer {...defaultOptions} audioLists={songs} />

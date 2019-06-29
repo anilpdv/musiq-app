@@ -7,9 +7,25 @@
     letter-spacing: 0.015em;
     font-family: Nunito;
     padding-top: 10px;
-    font-weight: 700;
+    font-weight: 600;
     word-spacing: 0.1rem;
     text-transform: capitalize;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    color: #edf2f7;
+    text-align: left;
+
+
+}
+
+.Song-author {
+    font-family: Nunito;
+    font-size: 14px;
+    color: gray;
+    text-align: left;
+    padding-left: 50px;
 }
 
 .fa-play {

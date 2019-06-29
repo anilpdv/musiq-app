@@ -11,11 +11,21 @@
 }
 
 .SongList-margin {
-  margin-left: 200px;
+  margin-left: 170px;
 }
 
 .song-list-titles {
-  margin-left: 80px;
+  margin-left: 10px;
+}
+
+.SongList-image-container {
+  width: 320px;
+}
+
+.SongList-image {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
 }
 
 @media (max-width: 800px) {
