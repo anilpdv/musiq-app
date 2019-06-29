@@ -43,6 +43,14 @@ export function transformPlayable(items) {
   return songs;
 }
 
+function lrtrim(str) {
+  if (str == null) return str;
+  str = str.replace(/^\s+/g, '');
+  return str
+    .replace(/\s+$/g, '')
+    .split(' ')
+    .join('-');
+}
 const override = css`
    {
     top: 10px;
@@ -54,11 +62,16 @@ function Song(props) {
   let songs = [];
   let spin = true;
   const [icon, setIcon] = useState(false);
+  const [downloadIcon, setDownloadIcon] = useState(false);
   if (props.relatedSongs.items) {
     songs = transformPlayable(props.relatedSongs.items);
   }
   const changeIcon = () => {
     setIcon(!icon);
+  };
+
+  const toggleDownloadIcon = () => {
+    setDownloadIcon(!downloadIcon);
   };
 
   const contentProps = useSpring({
@@ -83,19 +96,12 @@ function Song(props) {
 
   //dispatch({ type: 'ADD', song: song })
   return (
-    <div className=" py-5 px-0   play ">
-      <div
-        className="flex"
-        id="fja"
-        href="#"
-        onClick={() => {
-          props.getPlayingSong(song, props.song.id.videoId);
-        }}
-      >
+    <div className="Song py-5 px-0   play ">
+      <div className="flex" id="fja" href="#">
         {' '}
         {props.iPlayable ? (
           <>
-            <i className="mr-3 ">
+            <i className="mr-2">
               <BounceLoader
                 css={override}
                 sizeUnit={'px'}
@@ -108,18 +114,37 @@ function Song(props) {
         ) : icon ? (
           <animated.i
             style={contentProps}
-            className="fas fa-play text-gray-200 w-4"
+            className="fas fa-play text-gray-200 "
           />
         ) : (
-          <i className="fas fa-music text-gray-200 w-4" />
+          <i className="fas fa-music text-gray-200 " />
         )}
         <p
           className="song-title text-white pl-5"
+          onClick={() => {
+            props.getPlayingSong(song, props.song.id.videoId);
+          }}
           onMouseOver={changeIcon}
           onMouseLeave={changeIcon}
         >
           {title}{' '}
         </p>
+        <a
+          href={`https://warm-springs-86808.herokuapp.com/api/download/${
+            props.song.id.videoId
+          }/song/${lrtrim(title)}`}
+          download
+        >
+          <i
+            className={
+              downloadIcon
+                ? 'fas fa-arrow-alt-circle-down text-gray-300'
+                : 'fas fa-arrow-alt-circle-down text-gray-600'
+            }
+            onMouseOver={toggleDownloadIcon}
+            onMouseLeave={toggleDownloadIcon}
+          />
+        </a>
       </div>
       <div className="Song-author">
         <p className="">{author}</p>
