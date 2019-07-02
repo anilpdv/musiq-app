@@ -87,12 +87,13 @@ function ShowCage(props) {
               return (
                 <div className="ShowCage-recentlyPlayed-item">
                   <div className="ShowCage-recentlyPlayed-item-container">
-                    <img
+                    <div
                       className="ShowCage-recent-image rounded-full"
-                      src={`http://img.youtube.com/vi/${
-                        song.songId
-                      }/maxresdefault.jpg`}
-                      alt=""
+                      style={{
+                        backgroundImage: `url(
+                          https://i.ytimg.com/vi/${song.songId}/hqdefault.jpg
+                        )`
+                      }}
                     />
                     <p className="ShowCage-recentlyPlayed-item-name">
                       {song.name}

@@ -98,9 +98,12 @@ ShowCage recetly played
 }
 
 .ShowCage-recent-image {
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
     opacity: 1;
+    background-repeat: no-repeat;
+    background-position: center;
+
 }
 
 .ShowCage-recentlyPlayed-item {
