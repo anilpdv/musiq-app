@@ -46,7 +46,10 @@ function SongsList(props) {
       {props.songs[0] ? (
         <div className=" flex   h-full SongList-margin">
           <div>
-            <div className="  SongList-image-container " />
+            <div
+              className="  
+            SongList-image-container "
+            />
             <img
               className="SongList-image shadow-lg"
               src={
@@ -73,7 +76,14 @@ function SongsList(props) {
           </div>
         </div>
       ) : (
-        <p className="part-loading my-56"> loading...</p>
+        <div className="part-loading my-56 text-white">
+          {' '}
+          <img
+            className="part-loading-image"
+            src="https://img.icons8.com/color/100/000000/music-record.png"
+            alt="logo"
+          />
+        </div>
       )}
     </>
   );
