@@ -1,56 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { css } from '@emotion/core';
-import Entities from 'html-entities';
 import { useSpring, animated } from 'react-spring';
 import { BounceLoader } from 'react-spinners';
 import ReactJkMusicPlayer from 'react-jinke-music-player';
 import 'react-jinke-music-player/assets/index.css';
 import { defaultOptions } from '../musicPlayer/musicPlayer.component';
+import { transformPlayable, lrtrim, removeb } from '../utils/helper';
+import { DispatchContext } from '../context/RecentSongsContext';
 
 import './Song.component.css';
-const entities = new Entities.XmlEntities();
 
-function removeb(query) {
-  query = entities.decode(query);
-  query = query.split('-');
-
-  let author = query[0].split('|')[0];
-  let title = query[1]
-    ? query[1]
-        .replace(/\(.*?\)/g, '')
-        .replace(/\[.*?\]/g, '')
-        .split('|')[0]
-    : '';
-  return { author, title };
-}
-
-export function transformPlayable(items) {
-  let ids = [];
-  let songs = items.map(item => {
-    const { author, title } = removeb(item.snippet.title);
-    ids.push(item.id.videoId);
-    return {
-      name: title.substring(0, 20),
-      singer: author.substring(0, 10),
-      cover: item.snippet.thumbnails.default.url,
-      musicSrc: `https://warm-springs-86808.herokuapp.com/api/download/${
-        item.id.videoId
-      }/song/${title}`
-    };
-  });
-  console.log('tansform songs', songs);
-  songs = songs.filter(item => item.name !== '');
-  return songs;
-}
-
-function lrtrim(str) {
-  if (str == null) return str;
-  str = str.replace(/^\s+/g, '');
-  return str
-    .replace(/\s+$/g, '')
-    .split(' ')
-    .join('-');
-}
 const override = css`
    {
     top: 10px;
@@ -59,13 +18,12 @@ const override = css`
 `;
 
 function Song(props) {
+  const dispatch = useContext(DispatchContext);
   let songs = [];
   let spin = true;
   const [icon, setIcon] = useState(false);
   const [downloadIcon, setDownloadIcon] = useState(false);
-  if (props.relatedSongs.items) {
-    songs = transformPlayable(props.relatedSongs.items);
-  }
+
   const changeIcon = () => {
     setIcon(!icon);
   };
@@ -92,9 +50,11 @@ function Song(props) {
       props.song.id.videoId
     }/song/${title.trim()}`
   };
+  if (props.relatedSongs.items) {
+    songs = transformPlayable(props.relatedSongs.items);
+  }
   songs.unshift(song);
 
-  //dispatch({ type: 'ADD', song: song })
   return (
     <div className="Song py-5 px-0   play ">
       <div className="flex" id="fja" href="#">
@@ -117,12 +77,20 @@ function Song(props) {
             className="fas fa-play text-gray-200 "
           />
         ) : (
-          <i className="fas fa-music text-gray-200 " />
+          <i className="fas fa-music text-gray-100 " />
         )}
         <p
           className="song-title text-white pl-5"
           onClick={() => {
             props.getPlayingSong(song, props.song.id.videoId);
+            dispatch({
+              type: 'ADD',
+              songId: props.song.id.videoId,
+              author: author,
+              content: 'song',
+              backgroundImg: '',
+              name: title
+            });
           }}
           onMouseOver={changeIcon}
           onMouseLeave={changeIcon}
@@ -146,8 +114,8 @@ function Song(props) {
           />
         </a>
       </div>
-      <div className="Song-author">
-        <p className="">{author}</p>
+      <div className="Song-author ">
+        <p className="text-gray-400">{author}</p>
       </div>
       {props.iPlayable ? (
         songs.length > 1 ? (

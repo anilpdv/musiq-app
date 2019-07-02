@@ -10,7 +10,10 @@
     left: 0;
     overflow: hidden;
     z-index: 9;
-    background:#020202;
+    background-color: #000000;
+    background-image: linear-gradient(135deg, #000000 50%, #221c1c 100%);
+
+
 }
 
 .side-nav a {
@@ -18,35 +21,92 @@
     text-decoration: none;
     color: #cccccc;
     font-family: Nunito;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 16px;
-    line-height: 20px;
     letter-spacing: 0.015em;
-    padding-left: 35px;
-    margin-bottom: 20px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+.link-title {
+    padding-left: 10px;
 }
 
 .fas {
     padding: 14px;
     font-size: 20px;
+    text-align: start;
 }
 
 .fab {
     font-size: 40px;
-    margin: 40px 40px;
+    margin: 20px 20px;
 }
 
 .logo {
     padding: 10px;
-
     font-family: Montserrat;
 }
 
 .side-nav a:hover {
-    border-left: 3px solid green;
-    border-left-width: 2px;
+    border-left: 4px solid green;
+    color: white;
 
+}
 
+.RecentlyPlayed-content-heading {
+    display: block;
+    text-decoration: none;
+    color: #cccccc;
+    font-family: sans-serif, Raleway, Montserrat;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.10em;
+    padding-left: 20px;
+    margin-top: 45px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+}
+
+.RecentlyPlayed-content {
+    display: block;
+    text-decoration: none;
+    color: #cccccc;
+    font-family: Nunito;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 0.015em;
+    padding-left: 20px;
+}
+
+.RecentlyPlayed-list-names {
+    margin-bottom: 5px;
+}
+
+.RecentlyPlayed-name-container i {
+    font-size: 11px;
+    text-align: end;
+}
+
+.RecentlyPlayed-name {
+    font-size: 13px;
+    text-transform: capitalize;
+    letter-spacing: 0.01em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.RecentlyPlayed-type {
+    display: block;
+    text-decoration: none;
+    color: #cccccc;
+    font-family: Raleway, Montserrat;
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
 }
 
 @media (max-width: 800px) {

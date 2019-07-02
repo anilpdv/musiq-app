@@ -1,0 +1,134 @@
+* {
+    padding: 0
+}
+
+.ShowCage {
+    background-color: #fd5f00;
+    background-image: linear-gradient(135deg, #fd5f00 0%, #000000 100%);
+
+}
+
+.ShowCage-container {
+    margin-left: 250px;
+}
+
+.ShowCage-playlists-title {
+    font-size: 36px;
+    font-family: Nunito;
+    font-weight: 700;
+    padding: 20px 0px;
+    color: whitesmoke;
+}
+
+.ShowCage-playlist {
+
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-image: url('https://images.8tracks.com/cover/i/012/571/621/cody-davis-253928-unsplash-2818.jpg?rect=864,0,3456,3456&q=98&fm=jpg&fit=max&w=300&h=300');
+    text-align: left;
+    background-size: 200px 200px;
+    margin-right: 20px;
+}
+
+.ShowCage-playlist-content {
+
+    backface-visibility: hidden;
+    opacity: 1;
+}
+
+.ShowCage-playlist-title {
+    font-family: Nunito;
+    font-size: 34px;
+    padding-left: 10px;
+    text-transform: capitalize;
+    background-size: 200px 200px;
+}
+
+
+
+.ShowCage-playlist-title span {
+    display: block;
+    margin: 0;
+    font-weight: 800;
+}
+
+.ShowCage-playlist-hover-content {
+    position: absolute;
+    left: 35%;
+    top: 40%;
+    cursor: pointer;
+    opacity: 0;
+}
+
+
+
+.ShowCage-playlist:hover .ShowCage-playlist-hover-content {
+    opacity: 1;
+}
+
+.ShowCage-playlist:hover .ShowCage-playlist-content {
+    opacity: 0.2;
+    background: #380036;
+
+}
+
+/*------------------------
+ShowCage recetly played
+-------------------------*/
+
+.ShowCage-recentlyPlayed-title h1 {
+    font-family: Nunito;
+    font-size: 34px;
+    text-transform: capitalize;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    color: #eaeaea;
+}
+
+.ShowCage-recentlyPlayed-lists {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.ShowCage-recentlyPlayed-item-container {
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.ShowCage-recent-image {
+    width: 200px;
+    height: 200px;
+    opacity: 1;
+}
+
+.ShowCage-recentlyPlayed-item {
+    position: relative;
+}
+
+.ShowCage-recentlyPlayed-item-name {
+    font-family: Nunito;
+    color: #eaeaea;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    padding-top: 10px;
+}
+
+.ShowCage-recent-hover-content {
+    position: absolute;
+    left: 33%;
+    top: 30%;
+    cursor: pointer;
+    opacity: 0;
+    color: white;
+}
+
+.ShowCage-recentlyPlayed-item:hover .ShowCage-recent-hover-content {
+    opacity: 1;
+    color: white;
+}
+
+.ShowCage-recentlyPlayed-item:hover .ShowCage-recent-image {
+    opacity: 0.4;
+}

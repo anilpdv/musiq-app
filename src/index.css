@@ -8,11 +8,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
   width: 100%;
 
+  background-color: #4a5568;
+  background-image: linear-gradient(135deg, #4a5568 0%, #000000 100%);
 
-  /* background-color: #f7fafc;*/
   /*  background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(39, 199, 171, 1) 0%, rgba(70, 143, 197, 1) 90%);
 */
-  background: #0E0E0E;
 }
 
 
