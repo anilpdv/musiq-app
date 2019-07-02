@@ -23,16 +23,15 @@
 .ShowCage-playlist {
 
     position: relative;
-    width: 200px;
-    height: 200px;
-    background-image: url('https://images.8tracks.com/cover/i/012/571/621/cody-davis-253928-unsplash-2818.jpg?rect=864,0,3456,3456&q=98&fm=jpg&fit=max&w=300&h=300');
     text-align: left;
-    background-size: 200px 200px;
     margin-right: 20px;
 }
 
 .ShowCage-playlist-content {
+    width: 200px;
+    height: 200px;
 
+    background-size: 200px 200px;
     backface-visibility: hidden;
     opacity: 1;
 }
@@ -68,8 +67,7 @@
 }
 
 .ShowCage-playlist:hover .ShowCage-playlist-content {
-    opacity: 0.2;
-    background: #380036;
+    opacity: 0.4;
 
 }
 
@@ -116,12 +114,13 @@ ShowCage recetly played
     font-size: 12px;
     letter-spacing: 0.15em;
     padding-top: 10px;
+    font-weight: 700;
 }
 
 .ShowCage-recent-hover-content {
     position: absolute;
-    left: 33%;
-    top: 30%;
+    left: 35%;
+    top: 35%;
     cursor: pointer;
     opacity: 0;
     color: white;

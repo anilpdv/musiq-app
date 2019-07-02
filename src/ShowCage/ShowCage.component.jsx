@@ -17,7 +17,13 @@ function ShowCage(props) {
           <div className=" flex ShowCage-playlists">
             {/* adding playlist*/}
             <div className="ShowCage-playlist shadow-lg">
-              <div className="ShowCage-playlist-content">
+              <div
+                className="ShowCage-playlist-content"
+                style={{
+                  backgroundImage:
+                    "url('https://images.8tracks.com/cover/i/012/571/621/cody-davis-253928-unsplash-2818.jpg?rect=864,0,3456,3456&q=98&fm=jpg&fit=max&w=300&h=300')"
+                }}
+              >
                 <div className="ShowCage-playlist-title text-blue-200">
                   <span>New</span>
 
@@ -42,14 +48,14 @@ function ShowCage(props) {
                 </svg>
               </div>
             </div>
-            <div
-              className="ShowCage-playlist shadow-lg "
-              style={{
-                backgroundImage:
-                  "url('https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/ce5d8340339251.577bba3b36c3c.jpg')"
-              }}
-            >
-              <div className="ShowCage-playlist-content">
+            <div className="ShowCage-playlist shadow-lg ">
+              <div
+                className="ShowCage-playlist-content"
+                style={{
+                  backgroundImage:
+                    "url('https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/ce5d8340339251.577bba3b36c3c.jpg')"
+                }}
+              >
                 <div className="ShowCage-playlist-title text-teal-600">
                   <span>Weekly</span>
 
