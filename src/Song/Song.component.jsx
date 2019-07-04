@@ -1,12 +1,12 @@
-import React, { useState, useContext } from 'react';
-import { css } from '@emotion/core';
-import { useSpring, animated } from 'react-spring';
-import { BounceLoader } from 'react-spinners';
+import React, {useState, useContext} from 'react';
+import {css} from '@emotion/core';
+import {useSpring, animated} from 'react-spring';
+import {BounceLoader} from 'react-spinners';
 import ReactJkMusicPlayer from 'react-jinke-music-player';
 import 'react-jinke-music-player/assets/index.css';
-import { defaultOptions } from '../musicPlayer/musicPlayer.component';
-import { transformPlayable, lrtrim, removeb } from '../utils/helper';
-import { DispatchContext } from '../context/RecentSongsContext';
+import {defaultOptions} from '../musicPlayer/musicPlayer.component';
+import {transformPlayable, lrtrim, removeb} from '../utils/helper';
+import {DispatchContext} from '../context/RecentSongsContext';
 
 import './Song.component.css';
 
@@ -34,21 +34,21 @@ function Song(props) {
 
   const contentProps = useSpring({
     from: {
-      opacity: 0
+      opacity: 0,
     },
     to: {
-      opacity: 1
-    }
+      opacity: 1,
+    },
   });
 
-  const { author, title } = removeb(props.song.snippet.title);
+  const {author, title} = removeb(props.song.snippet.title);
   const song = {
     name: title,
     singer: author,
     cover: props.song.snippet.thumbnails.default.url,
-    musicSrc: `https://warm-springs-86808.herokuapp.com/api/download/${
+    musicSrc: `https://musiq-app-0396.appspot.com/api/download/${
       props.song.id.videoId
-    }/song/${title.trim()}`
+    }/song/${title.trim()}`,
   };
   if (props.relatedSongs.items) {
     songs = transformPlayable(props.relatedSongs.items);
@@ -89,20 +89,18 @@ function Song(props) {
               author: author,
               content: 'song',
               backgroundImg: '',
-              name: title
+              name: title,
             });
           }}
           onMouseOver={changeIcon}
-          onMouseLeave={changeIcon}
-        >
+          onMouseLeave={changeIcon}>
           {title}{' '}
         </p>
         <a
-          href={`https://warm-springs-86808.herokuapp.com/api/download/${
+          href={`https://musiq-app-0396.appspot.com/api/download/${
             props.song.id.videoId
           }/song/${lrtrim(title)}`}
-          download
-        >
+          download>
           <i
             className={
               downloadIcon
