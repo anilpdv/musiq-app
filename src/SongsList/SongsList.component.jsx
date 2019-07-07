@@ -1,10 +1,10 @@
-import React, {useState, useEffect, Component} from 'react';
+import React, { useState, useEffect, Component } from 'react';
 import Song from '../Song/Song.component';
 import './SongsList.component.css';
 import Axios from 'axios';
-import {useTrail, useSpring} from 'react-spring';
-import {defaultProps} from 'recompose';
-import {animated} from 'react-spring';
+import { useTrail, useSpring } from 'react-spring';
+import { defaultProps } from 'recompose';
+import { animated } from 'react-spring';
 
 function SongsList(props) {
   console.log('props', props);
@@ -16,7 +16,7 @@ function SongsList(props) {
 
   const getPlayingSong = async (song, id) => {
     const resp = await Axios.get(
-      `https://musiq-app-0396.appspot.com/api/related/` + id,
+      `https://musiq-app-0396.appspot.com/api/related/` + id
     );
     console.log('realted songs', resp.data);
     setRelatedSongs(resp.data);
@@ -28,18 +28,18 @@ function SongsList(props) {
     from: {
       marginLeft: -10,
       opacity: 0,
-      transform: 'translate3d(0,-40px0)',
+      transform: 'translate3d(0,-40px0)'
     },
-    to: {marginLeft: 10, opacity: 1, transform: 'translate3d(0,0px,0)'},
+    to: { marginLeft: 10, opacity: 1, transform: 'translate3d(0,0px,0)' }
   });
 
   const contentProps = useSpring({
     from: {
       marginLeft: -10,
       opacity: 0,
-      transform: 'translate3d(0,0px,0)',
+      transform: 'translate3d(0,0px,0)'
     },
-    to: {marginLeft: 10, opacity: 1, transform: 'translate3d(0,-40px0)'},
+    to: { marginLeft: 10, opacity: 1, transform: 'translate3d(0,-40px0)' }
   });
   return (
     <>
@@ -53,7 +53,7 @@ function SongsList(props) {
             <img
               className="SongList-image shadow-lg"
               src={
-                'http://img.youtube.com/vi/' +
+                'https://i.ytimg.com/vi/' +
                 props.songs[0].id.videoId +
                 '/maxresdefault.jpg'
               }
@@ -88,5 +88,5 @@ function SongsList(props) {
     </>
   );
 }
-const withDefaultProps = defaultProps({songs: []});
+const withDefaultProps = defaultProps({ songs: [] });
 export default withDefaultProps(SongsList);

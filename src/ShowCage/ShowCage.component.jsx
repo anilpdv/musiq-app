@@ -2,7 +2,6 @@ import React, { useState, useContext } from 'react';
 import { RecentSongsContext } from '../context/RecentSongsContext';
 
 import './ShowCage.component.css';
-import Axios from 'axios';
 
 function ShowCage(props) {
   const recentSongs = useContext(RecentSongsContext);
@@ -35,7 +34,7 @@ function ShowCage(props) {
                 onClick={() => props.handlePlaylist('id')}
               >
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns="https://www.w3.org/2000/svg"
                   x="0px"
                   y="0px"
                   width="50"
@@ -69,7 +68,7 @@ function ShowCage(props) {
                 }
               >
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns="https://www.w3.org/2000/svg"
                   x="0px"
                   y="0px"
                   width="50"
@@ -110,7 +109,7 @@ function ShowCage(props) {
                     onClick={() => props.handlePlaylist('id')}
                   >
                     <svg
-                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns="https://www.w3.org/2000/svg"
                       x="0px"
                       y="0px"
                       width="50"
