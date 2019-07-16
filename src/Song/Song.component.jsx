@@ -1,14 +1,10 @@
-import React, {useState, useContext} from 'react';
-import {css} from '@emotion/core';
-import {useSpring, animated} from 'react-spring';
-import {BounceLoader} from 'react-spinners';
-import ReactJkMusicPlayer from 'react-jinke-music-player';
-import 'react-jinke-music-player/assets/index.css';
-import {defaultOptions} from '../musicPlayer/musicPlayer.component';
-import {transformPlayable, lrtrim, removeb} from '../utils/helper';
-import {DispatchContext} from '../context/RecentSongsContext';
-
+import React, { useState, useContext } from 'react';
+import { css } from '@emotion/core';
+import { useSpring, animated } from 'react-spring';
+import { BounceLoader } from 'react-spinners';
+import { lrtrim, removeb } from '../utils/helper';
 import './Song.component.css';
+import { useActions } from 'easy-peasy';
 
 const override = css`
    {
@@ -18,11 +14,13 @@ const override = css`
 `;
 
 function Song(props) {
-  const dispatch = useContext(DispatchContext);
-  let songs = [];
   let spin = true;
   const [icon, setIcon] = useState(false);
   const [downloadIcon, setDownloadIcon] = useState(false);
+  const addSongsToLocalStorage = useActions(
+    actions => actions.addSongsToLocalStorage
+  );
+  const fetchSongs = useActions(actions => actions.fetchSongs);
 
   const changeIcon = () => {
     setIcon(!icon);
@@ -34,26 +32,23 @@ function Song(props) {
 
   const contentProps = useSpring({
     from: {
-      opacity: 0,
+      opacity: 0
     },
     to: {
-      opacity: 1,
-    },
+      opacity: 1
+    }
   });
 
-  const {author, title} = removeb(props.song.snippet.title);
+  const { author, title } = removeb(props.song.snippet.title);
   const song = {
+    id: props.song.id.videoId,
     name: title,
     singer: author,
-    cover: props.song.snippet.thumbnails.default.url,
-    musicSrc: `https://musiq-app-0396.appspot.com/api/download/${
+    img: props.song.snippet.thumbnails.default.url,
+    src: `https://musiq-app-0396.appspot.com/api/listen/${
       props.song.id.videoId
-    }/song/${title.trim()}`,
+    }`
   };
-  if (props.relatedSongs.items) {
-    songs = transformPlayable(props.relatedSongs.items);
-  }
-  songs.unshift(song);
 
   return (
     <div className="Song py-5 px-0   play ">
@@ -82,25 +77,28 @@ function Song(props) {
         <p
           className="song-title text-white pl-5"
           onClick={() => {
-            props.getPlayingSong(song, props.song.id.videoId);
-            dispatch({
-              type: 'ADD',
-              songId: props.song.id.videoId,
-              author: author,
-              content: 'song',
-              backgroundImg: '',
-              name: title,
-            });
+            fetchSongs({ id: props.song.id.videoId, song });
+            addSongsToLocalStorage([
+              {
+                songId: props.song.id.videoId,
+                author: author,
+                content: 'song',
+                backgroundImg: '',
+                name: title
+              }
+            ]);
           }}
           onMouseOver={changeIcon}
-          onMouseLeave={changeIcon}>
+          onMouseLeave={changeIcon}
+        >
           {title}{' '}
         </p>
         <a
           href={`https://musiq-app-0396.appspot.com/api/download/${
             props.song.id.videoId
           }/song/${lrtrim(title)}`}
-          download>
+          download
+        >
           <i
             className={
               downloadIcon
@@ -115,19 +113,6 @@ function Song(props) {
       <div className="Song-author ">
         <p className="text-gray-400">{author}</p>
       </div>
-      {props.iPlayable ? (
-        songs.length > 1 ? (
-          <ReactJkMusicPlayer {...defaultOptions} audioLists={songs} />
-        ) : (
-          <ReactJkMusicPlayer
-            className="music-player"
-            {...defaultOptions}
-            audioLists={[song]}
-          />
-        )
-      ) : (
-        ''
-      )}
     </div>
   );
 }

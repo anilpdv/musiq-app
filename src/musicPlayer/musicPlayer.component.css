@@ -1,1 +1,10 @@
-*{padding:0}
+* {
+  padding: 0;
+}
+
+.ReactAudioPlayer {
+  position: fixed;
+  bottom: 0;
+  z-index: 99;
+  width: 100%;
+}

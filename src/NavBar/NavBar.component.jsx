@@ -1,11 +1,23 @@
-import React, { useContext } from 'react';
+import React, { useEffect } from 'react';
+import { useStore, useActions } from 'easy-peasy';
 import { NavLink } from 'react-router-dom';
-import { RecentSongsContext } from '../context/RecentSongsContext';
 
 import './NavBar.component.css';
 
 function NavBar() {
-  const recentSongs = useContext(RecentSongsContext);
+  const LoadLocalStorageData = useActions(
+    actions => actions.LoadLocalStorageData
+  );
+
+  const loadLocalStorageFavourites = useActions(
+    actions => actions.loadLocalStorageFavourites
+  );
+  useEffect(() => {
+    console.log('calling loadlocalstorage');
+    LoadLocalStorageData({ key: 'songs' });
+    loadLocalStorageFavourites({ key: 'favourites' });
+  }, []);
+  const recentSongs = useStore(store => store.recentSongs);
   console.log('recent songs played', recentSongs);
   return (
     <div
@@ -16,20 +28,20 @@ function NavBar() {
         <span className="logo">Tolo</span>
       </i>
       <NavLink to="/">
-        <i className="fas fa-home text-base" />
-
+        <i className="fal fa-home text-base" />
         <span className="link-title">Home</span>
       </NavLink>
 
       <NavLink to="/search">
-        <i className="fas fa-search" />
+        <i className="fal fa-search" />
         <span className="link-title">Search</span>
       </NavLink>
 
-      <NavLink to="/search">
-        <i className="fas fa-align-right" />
+      <NavLink to="/library">
+        <i className="fal fa-align-right" />
         <span className="link-title">Your Library</span>
       </NavLink>
+
       <div className="RecentlyPlayed">
         <div className="RecentlyPlayed-content-heading">
           <h2>Recently Played</h2>
@@ -42,7 +54,11 @@ function NavBar() {
                   <div className="flex RecentlyPlayed-name-container">
                     <span className="RecentlyPlayed-name">
                       {song.name}
-                      <i className="fas fa-volume-up" />
+                      {recentSongs[0].songId === song.songId ? (
+                        <i className="fal fa-volume-up" />
+                      ) : (
+                        ''
+                      )}
                     </span>
                   </div>
                   <p className="RecentlyPlayed-type">{song.content}</p>

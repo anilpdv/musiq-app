@@ -1,0 +1,38 @@
+* {
+    padding: 0
+}
+
+.Queue {
+    margin-left: 260px;
+}
+
+.Queue-heading h1 {
+    text-align: center;
+    font-size: 42px;
+    color: aliceblue;
+    font-family: Nunito;
+    font-weight: 800 !important;
+    padding: 20px 0px;
+
+}
+
+.Queue-playing-song-heading,
+.Queue-next-songs-heading {
+    font-size: 18px;
+    font-family: Montserrat;
+    color: aliceblue;
+    font-weight: 500 !important;
+    margin-bottom: 10px;
+    word-spacing: 0.15em;
+    letter-spacing: 0.045em;
+}
+
+.Queue-next-songs-heading {
+    margin-top: 20px;
+}
+
+@media only screen and (max-width: 800px) {
+    .Queue {
+        margin-left: 70px;
+    }
+}

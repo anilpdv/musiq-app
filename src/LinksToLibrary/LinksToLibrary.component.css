@@ -1,0 +1,31 @@
+* {
+    padding: 0
+}
+
+.Library-links {
+    display: flex;
+    justify-content: space-around;
+    font-family: Nunito;
+    letter-spacing: 0.014rem;
+    word-spacing: 0.14rem;
+    font-size: 18px;
+    text-transform: lowercase;
+    padding: 20px;
+}
+
+.Library-links a {
+    color: white;
+    height: 24px;
+
+}
+
+.Library-links a:hover {
+    color: #eaeaea;
+    border-bottom: 2px solid greenyellow;
+}
+
+.is-active {
+    color: #eaeaea;
+    border-bottom: 2px solid black;
+
+}

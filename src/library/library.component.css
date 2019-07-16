@@ -1,0 +1,16 @@
+* {
+    padding: 0
+}
+
+.Library {
+    margin-left: 260px;
+}
+
+
+
+/*--------@media ----------*/
+@media only screen and (max-width: 800px) {
+    .Library {
+        margin-left: 0px;
+    }
+}

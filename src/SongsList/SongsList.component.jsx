@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Component } from 'react';
+import React, { useState, useEffect, Component, useContext } from 'react';
 import Song from '../Song/Song.component';
 import './SongsList.component.css';
 import Axios from 'axios';
@@ -8,21 +8,7 @@ import { animated } from 'react-spring';
 
 function SongsList(props) {
   console.log('props', props);
-  const [song, setSong] = useState({});
-
-  const [relatedSongs, setRelatedSongs] = useState({});
-  const [id, setId] = useState('');
   useEffect(() => {}, []);
-
-  const getPlayingSong = async (song, id) => {
-    const resp = await Axios.get(
-      `https://musiq-app-0396.appspot.com/api/related/` + id
-    );
-    console.log('realted songs', resp.data);
-    setRelatedSongs(resp.data);
-    setSong(song);
-    setId(id);
-  };
 
   const trails = useTrail(props.songs.length, {
     from: {
@@ -65,11 +51,9 @@ function SongsList(props) {
               <animated.div key={props.songs[index].id.videoId} style={props}>
                 <Song
                   song={props.songs[index]}
-                  getPlayingSong={getPlayingSong}
                   iPlayable={
-                    id === props.songs[index].id.videoId ? true : false
+                    'fake' === props.songs[index].id.videoId ? true : false
                   }
-                  relatedSongs={relatedSongs}
                 />
               </animated.div>
             ))}

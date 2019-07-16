@@ -1,10 +1,14 @@
-import React, { useState, useContext } from 'react';
-import { RecentSongsContext } from '../context/RecentSongsContext';
+import React, { useState, useEffect } from 'react';
+import { useStore, useActions } from 'easy-peasy';
 
 import './ShowCage.component.css';
 
 function ShowCage(props) {
-  const recentSongs = useContext(RecentSongsContext);
+  const fetchPlaylist = useActions(actions => actions.fetchPlaylist);
+  const recentSongs = useStore(state => state.recentSongs);
+  useEffect(() => {
+    console.log('recent showcage', recentSongs);
+  }, []);
   return (
     <div className="ShowCage ">
       <div className="ShowCage-container">
@@ -64,7 +68,9 @@ function ShowCage(props) {
               <div
                 className="ShowCage-playlist-hover-content"
                 onClick={() =>
-                  props.handlePlaylist('PLx0sYbCqOb8S7gusno3ZtoviWe5i0_9xa')
+                  fetchPlaylist({
+                    playlistId: 'PLx0sYbCqOb8S7gusno3ZtoviWe5i0_9xa'
+                  })
                 }
               >
                 <svg
