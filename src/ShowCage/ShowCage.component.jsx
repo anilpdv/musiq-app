@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useStore, useActions } from 'easy-peasy';
+import TopSongs from '../assets/TOP.jpeg';
+import NewSongs from '../assets/NewSongs.jpeg';
+import Trending from '../assets/Trending.jpeg';
+import TOPUS from '../assets/TOPUS.jpg';
+import TOPUK from '../assets/TOPUK.jpg';
+import TOPCANADA from '../assets/TOPCANADA.jpg';
 
 import './ShowCage.component.css';
+import PlaylistViewer from '../PlaylistViewer/PlaylistViewer.component';
 
 function ShowCage(props) {
   const fetchPlaylist = useActions(actions => actions.fetchPlaylist);
@@ -19,76 +26,20 @@ function ShowCage(props) {
 
           <div className=" flex ShowCage-playlists">
             {/* adding playlist*/}
-            <div className="ShowCage-playlist shadow-lg">
-              <div
-                className="ShowCage-playlist-content"
-                style={{
-                  backgroundImage:
-                    "url('https://images.8tracks.com/cover/i/012/571/621/cody-davis-253928-unsplash-2818.jpg?rect=864,0,3456,3456&q=98&fm=jpg&fit=max&w=300&h=300')"
-                }}
-              >
-                <div className="ShowCage-playlist-title text-blue-200">
-                  <span>New</span>
+            <PlaylistViewer
+              img={TopSongs}
+              playlistId="PL4fGSI1pDJn69On1f-8NAvX_CYlx7QyZc"
+            />
 
-                  <span>Songs</span>
-                </div>
-              </div>
-              <div
-                className="ShowCage-playlist-hover-content"
-                onClick={() => props.handlePlaylist('id')}
-              >
-                <svg
-                  xmlns="https://www.w3.org/2000/svg"
-                  x="0px"
-                  y="0px"
-                  width="50"
-                  height="50"
-                  viewBox="0 0 50 50"
-                  style={{ fill: '#eeeeee' }}
-                >
-                  {' '}
-                  <path d="M25,2C12.318,2,2,12.317,2,25s10.318,23,23,23s23-10.317,23-23S37.682,2,25,2z M18.042,36.034l-0.083-21.996L37,24.964 L18.042,36.034z" />
-                </svg>
-              </div>
-            </div>
-            <div className="ShowCage-playlist shadow-lg ">
-              <div
-                className="ShowCage-playlist-content"
-                style={{
-                  backgroundImage:
-                    "url('https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/ce5d8340339251.577bba3b36c3c.jpg')"
-                }}
-              >
-                <div className="ShowCage-playlist-title text-teal-600">
-                  <span>Weekly</span>
+            <PlaylistViewer
+              img={NewSongs}
+              playlistId="PL4fGSI1pDJn69On1f-8NAvX_CYlx7QyZc"
+            />
 
-                  <span>Hits</span>
-                </div>
-              </div>
-              <div
-                className="ShowCage-playlist-hover-content"
-                onClick={() =>
-                  fetchPlaylist({
-                    playlistId: 'PLx0sYbCqOb8S7gusno3ZtoviWe5i0_9xa'
-                  })
-                }
-              >
-                <svg
-                  xmlns="https://www.w3.org/2000/svg"
-                  x="0px"
-                  y="0px"
-                  width="50"
-                  height="50"
-                  viewBox="0 0 50 50"
-                  style={{ fill: '#eeeeee' }}
-                >
-                  {' '}
-                  <path d="M25,2C12.318,2,2,12.317,2,25s10.318,23,23,23s23-10.317,23-23S37.682,2,25,2z M18.042,36.034l-0.083-21.996L37,24.964 L18.042,36.034z" />
-                </svg>
-              </div>
-            </div>
+            <PlaylistViewer img={Trending} playlist="fjalfj" />
           </div>
         </div>
+
         <div className="ShowCage-recentlyPlayed">
           <div className="ShowCage-recentlyPlayed-title">
             <h1>Recently Played</h1>
@@ -130,6 +81,26 @@ function ShowCage(props) {
                 </div>
               );
             })}
+          </div>
+        </div>
+        <div className="ShowCage-Charts">
+          <div className="ShowCage-playlists-title">
+            <h1>Charts</h1>
+          </div>
+
+          <div className=" flex ShowCage-playlists">
+            {/* adding playlist*/}
+            <PlaylistViewer
+              img={TOPUS}
+              playlistId="PL4fGSI1pDJn69On1f-8NAvX_CYlx7QyZc"
+            />
+
+            <PlaylistViewer
+              img={TOPUK}
+              playlistId="PL4fGSI1pDJn69On1f-8NAvX_CYlx7QyZc"
+            />
+
+            <PlaylistViewer img={TOPCANADA} playlist="fjalfj" />
           </div>
         </div>
       </div>

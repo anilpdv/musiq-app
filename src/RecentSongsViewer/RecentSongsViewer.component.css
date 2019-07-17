@@ -3,5 +3,10 @@
 }
 
 .RecentSongsViewer {
-    margin-left: 260px;
+    margin-left: 200px;
+    padding-left: 100px;
+    height: 100vh;
+    background-color: #266e92;
+    background-image: linear-gradient(139deg, #266e92 0%, #000000 100%);
+
 }

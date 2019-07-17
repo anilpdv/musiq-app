@@ -6,11 +6,12 @@
     display: flex;
     justify-content: space-around;
     font-family: Nunito;
-    letter-spacing: 0.014rem;
+    letter-spacing: 0.094rem;
     word-spacing: 0.14rem;
-    font-size: 18px;
-    text-transform: lowercase;
+    font-size: 12px;
+    text-transform: uppercase;
     padding: 20px;
+    font-weight: 700;
 }
 
 .Library-links a {

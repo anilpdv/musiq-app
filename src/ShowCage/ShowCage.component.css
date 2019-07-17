@@ -9,13 +9,15 @@
 }
 
 .ShowCage-container {
-    margin-left: 250px;
+    margin-left: 200px;
+    padding-left: 80px;
+    padding-bottom: 150px;
 }
 
-.ShowCage-playlists-title {
+.ShowCage-playlists-title h1 {
     font-size: 36px;
     font-family: Nunito;
-    font-weight: 700;
+    font-weight: 800 !important;
     padding: 20px 0px;
     color: whitesmoke;
 }
@@ -30,7 +32,6 @@
 .ShowCage-playlist-content {
     width: 200px;
     height: 200px;
-
     background-size: 200px 200px;
     backface-visibility: hidden;
     opacity: 1;
@@ -54,7 +55,7 @@
 
 .ShowCage-playlist-hover-content {
     position: absolute;
-    left: 35%;
+    left: 38%;
     top: 40%;
     cursor: pointer;
     opacity: 0;
@@ -75,13 +76,18 @@
 ShowCage recetly played
 -------------------------*/
 
+.ShowCage-recentlyPlayed {
+    margin-top: 80px;
+
+}
+
 .ShowCage-recentlyPlayed-title h1 {
     font-family: Nunito;
     font-size: 34px;
     text-transform: capitalize;
-    margin-top: 40px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     color: #eaeaea;
+    font-weight: 800;
 }
 
 .ShowCage-recentlyPlayed-lists {
@@ -96,17 +102,19 @@ ShowCage recetly played
 }
 
 .ShowCage-recent-image {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     opacity: 1;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center center;
 
 }
 
 .ShowCage-recentlyPlayed-item {
     position: relative;
 }
+
+
 
 .ShowCage-recentlyPlayed-item-name {
     font-family: Nunito;
@@ -120,7 +128,7 @@ ShowCage recetly played
 .ShowCage-recent-hover-content {
     position: absolute;
     left: 35%;
-    top: 35%;
+    top: 30%;
     cursor: pointer;
     opacity: 0;
     color: white;

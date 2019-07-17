@@ -3,7 +3,11 @@
 }
 
 .Queue {
-    margin-left: 260px;
+    margin-left: 200px;
+    padding-left: 100px;
+    background-color: #8e4531;
+    background-image: linear-gradient(139deg, #8e4531 0%, #000000 100%);
+
 }
 
 .Queue-heading h1 {

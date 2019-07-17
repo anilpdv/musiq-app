@@ -39,9 +39,10 @@
 .QueueItem-content p {
     font-size: 12px;
     font-family: Nunito;
-    font-weight: 500;
+    font-weight: 600;
     word-spacing: 0.02em;
-    letter-spacing: 0.015em;
+    letter-spacing: 0.045em;
+    color: #eaeaea;
 }
 
 .fal.fa-arrow-alt-circle-down {

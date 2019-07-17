@@ -6,12 +6,13 @@
 .side-nav {
   z-index: 1;
   top: 0;
-  width: 225px;
+  width: 245px;
   left: 0;
   overflow: hidden;
   z-index: 9;
-  background-color: #000000;
-  background-image: linear-gradient(135deg, #000000 50%, #221c1c 100%);
+  background-color: #404040;
+  background-image: linear-gradient(124deg, #404040 0%, #000000 100%);
+
 }
 
 .side-nav a {

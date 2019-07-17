@@ -5,6 +5,7 @@ import Playlist from '../Playlist/Playlist.component';
 import Queue from '../Queue/Queue.component';
 import Library from '../library/library.component';
 import RecentSongsViewer from '../RecentSongsViewer/RecentSongsViewer.component';
+import PlaylistViewer from '../PlaylistViewer/PlaylistViewer.component';
 
 const Routes = props => {
   return (
@@ -15,6 +16,7 @@ const Routes = props => {
       <Route exact path="/library" render={props => <Library {...props} />} />
       <Route exact path="/recent" render={() => <RecentSongsViewer />} />
       <Route exact path="/liked" render={() => <Library />} />
+      <Route exact path="/playlist" render={() => <PlaylistViewer />} />
     </Switch>
   );
 };
