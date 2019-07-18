@@ -185,7 +185,9 @@ function AudioPlayer() {
                     {
                       id: songsPlaying[songIndex].id,
                       name: songsPlaying[songIndex].name,
-                      singer: songsPlaying[songIndex].singer
+                      singer: songsPlaying[songIndex].singer,
+                      src: songsPlaying[songIndex].src,
+                      img: songsPlaying[songIndex].img
                     }
                   ]);
                 }}
@@ -196,6 +198,7 @@ function AudioPlayer() {
             {/*AudioPlayer-Player-buttons flex*/}
             <audio
               id="player"
+              autoPlay
               src={songsPlaying[songIndex] ? songsPlaying[songIndex].src : ''}
               onPlay={handlePlaying}
               onPause={handlePausing}

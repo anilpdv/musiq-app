@@ -15,18 +15,20 @@
 }
 
 .Library-links a {
-    color: white;
+    color: #eaeaea;
     height: 24px;
 
 }
 
 .Library-links a:hover {
-    color: #eaeaea;
-    border-bottom: 2px solid greenyellow;
+    color: white;
 }
 
 .is-active {
-    color: #eaeaea;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid green;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-left-radius: 2px;
 
 }

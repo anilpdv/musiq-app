@@ -20,15 +20,9 @@ export default {
             console.log('try', val);
             actions.addRecentSongs(val);
             actions.fetchSongs({
-                id: val[0].songId,
+                id: val[0].id,
 
-                song: {
-                    id: val[0].songId,
-                    name: val[0].name,
-                    singer: val[0].author,
-                    img: `http://img.youtube.com/vi/${val[0].songId}/sddefault.jpg`,
-                    src: `https://musiq-app-0396.appspot.com/api/listen/${val[0].songId}`
-                }
+                song: val[0]
             });
         } catch (e) {
             console.log('error val');

@@ -12,7 +12,7 @@ function RecentSongsViewer() {
       <LinksToLibrary />
       <div className="RecentSongs">
         {recentSongs.map(song => {
-          return <QueueItem song={{ name: song.name, singer: song.author }} />;
+          return <QueueItem song={song} />;
         })}
       </div>
     </div>

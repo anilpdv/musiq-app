@@ -53,7 +53,7 @@ function ShowCage(props) {
                       className="ShowCage-recent-image rounded-full"
                       style={{
                         backgroundImage: `url(
-                          https://i.ytimg.com/vi/${song.songId}/hqdefault.jpg
+                          https://i.ytimg.com/vi/${song.id}/hqdefault.jpg
                         )`
                       }}
                     />

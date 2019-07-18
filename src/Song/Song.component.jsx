@@ -80,11 +80,17 @@ function Song(props) {
             fetchSongs({ id: props.song.id.videoId, song });
             addSongsToLocalStorage([
               {
-                songId: props.song.id.videoId,
-                author: author,
-                content: 'song',
+                id: props.song.id.videoId,
+                singer: author,
+                type: 'song',
                 backgroundImg: '',
-                name: title
+                name: title,
+                img: `https://img.youtube.com/vi/${
+                  props.song.id.videoId
+                }/sddefault.jpg`,
+                src: `https://musiq-app-0396.appspot.com/api/listen/${
+                  props.song.id.videoId
+                }`
               }
             ]);
           }}
