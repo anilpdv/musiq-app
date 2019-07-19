@@ -1,1 +1,50 @@
-*{padding:0}
+* {
+    padding: 0
+}
+
+
+.Library-links {
+    display: flex;
+    justify-content: space-around;
+    font-family: Nunito;
+    letter-spacing: 0.094rem;
+    word-spacing: 0.14rem;
+    font-size: 12px;
+    text-transform: uppercase;
+    padding: 20px;
+    font-weight: 700;
+}
+
+.Library-links a {
+    color: #cbd5e0;
+    height: 24px;
+
+}
+
+.Library-links a:hover {
+    color: white;
+
+}
+
+.Library-link {
+    text-align: center;
+}
+
+hr {
+    opacity: 0;
+}
+
+.Library-link:hover hr {
+    opacity: 1;
+    transition: 0.4s;
+    background-color: green;
+
+    width: 30px;
+    padding: 0;
+    margin: 0;
+    margin: auto !important;
+}
+
+.is-active {
+    color: white;
+}

@@ -15,20 +15,35 @@
 }
 
 .Library-links a {
-    color: #eaeaea;
+    color: #cbd5e0;
     height: 24px;
 
 }
 
 .Library-links a:hover {
     color: white;
+
+}
+
+.Library-link {
+    text-align: center;
+}
+
+hr {
+    opacity: 0;
+}
+
+.Library-link:hover hr {
+    opacity: 1;
+    transition: 1s;
+    background-color: green;
+
+    width: 30px;
+    padding: 0;
+    margin: 0;
+    margin: auto !important;
 }
 
 .is-active {
-    border-bottom: 2px solid green;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom-left-radius: 2px;
-
+    color: white;
 }

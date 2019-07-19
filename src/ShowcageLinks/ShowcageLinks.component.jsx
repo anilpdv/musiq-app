@@ -7,17 +7,38 @@ function ShowcageLinks() {
   return (
     <div>
       <div className="Library-links">
-        <NavLink activeClassName="is-active" to="/featured">
+        <NavLink
+          className="Library-link"
+          activeClassName="is-active"
+          to="/featured"
+        >
           Featured
+          <hr />
         </NavLink>
-        <NavLink activeClassName="is-active" to="/charts">
+
+        <NavLink
+          className="Library-link"
+          activeClassName="is-active"
+          to="/charts"
+        >
           Charts
+          <hr />
         </NavLink>
-        <NavLink activeClassName="is-active" to="/geners">
-          Geners
+        <NavLink
+          className="Library-link "
+          activeClassName="is-active"
+          to="/geners"
+        >
+          Genres
+          <hr />
         </NavLink>
-        <NavLink activeClassName="is-active" to="/newrelease">
+        <NavLink
+          className="Library-link"
+          activeClassName="is-active"
+          to="/newrelease"
+        >
           New Releases
+          <hr />
         </NavLink>
       </div>
     </div>

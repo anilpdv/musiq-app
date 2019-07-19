@@ -9,6 +9,7 @@ import TOPCANADA from '../assets/TOPCANADA.jpg';
 
 import './ShowCage.component.css';
 import PlaylistViewer from '../PlaylistViewer/PlaylistViewer.component';
+import ShowcageLinks from '../ShowcageLinks/ShowcageLinks.component';
 
 function ShowCage(props) {
   const fetchPlaylist = useActions(actions => actions.fetchPlaylist);
@@ -19,6 +20,7 @@ function ShowCage(props) {
   return (
     <div className="ShowCage ">
       <div className="ShowCage-container">
+        <ShowcageLinks />
         <div className=" ShowCage-recommend">
           <div className="ShowCage-playlists-title">
             <h1>Recommended for you </h1>
