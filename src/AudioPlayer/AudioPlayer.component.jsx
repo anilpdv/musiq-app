@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { useStore, useActions } from 'easy-peasy';
+import React, {useState, useEffect} from 'react';
+import {Link} from 'react-router-dom';
+import {useStore, useActions} from 'easy-peasy';
 import './AudioPlayer.component.css';
 
 const checkFavouriteExists = (id, favourites) => {
@@ -14,7 +14,7 @@ const checkFavouriteExists = (id, favourites) => {
 
 function AudioPlayer() {
   const addFavouritesToLocalStorage = useActions(
-    actions => actions.addFavouritesToLocalStorage
+    actions => actions.addFavouritesToLocalStorage,
   );
   const favourites = useStore(store => store.favourites);
 
@@ -150,11 +150,17 @@ function AudioPlayer() {
               <div
                 class="Image"
                 style={{
-                  backgroundImage: `url("${songsPlaying[songIndex].img}")`
+                  backgroundImage: `url("${songsPlaying[songIndex].img}")`,
                 }}
               />
             ) : (
-              ''
+              <div
+                class="Image"
+                style={{
+                  backgroundImage:
+                    'https://apkdl.in/apkimage/51MDy8ePKl1XLi8ZizQK28OqOwvfq8LmMPz9OyJA1zsVnrSH6AJZ-BGJPeFhDe1Yp7nl=rw',
+                }}
+              />
             )}
           </div>
           <div class="AudioPlayer-text">
@@ -187,8 +193,8 @@ function AudioPlayer() {
                       name: songsPlaying[songIndex].name,
                       singer: songsPlaying[songIndex].singer,
                       src: songsPlaying[songIndex].src,
-                      img: songsPlaying[songIndex].img
-                    }
+                      img: songsPlaying[songIndex].img,
+                    },
                   ]);
                 }}
               />
@@ -231,10 +237,10 @@ function AudioPlayer() {
                 <div class="AudioPlayer-Player-Progress-container">
                   {' '}
                   <div class="Progress-back">
-                    <div class="Progress" style={{ width: progress + '%' }} />{' '}
+                    <div class="Progress" style={{width: progress + '%'}} />{' '}
                   </div>{' '}
                 </div>
-                <div class="Progress-ball" style={{ left: progress + '%' }} />{' '}
+                <div class="Progress-ball" style={{left: progress + '%'}} />{' '}
               </div>
               <span class="AudioPlayer-time">{duration.toFixed(2)}</span>{' '}
             </div>
@@ -250,8 +256,7 @@ function AudioPlayer() {
           <div class="AudioPlayer-Player-volume">
             <div
               className="AudioPlayer-Audio-Progress"
-              style={{ width: value * 10 + '%' }}
-            >
+              style={{width: value * 10 + '%'}}>
               {' '}
               <input
                 class="slider"
