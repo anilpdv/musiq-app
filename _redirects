@@ -1,6 +1,6 @@
-/search   /search   200
-/library  /library  200
-/liked    /liked    200
-/charts   /charts   200
-/recent   /recent   200
+/search   /searchforsongs 200
+/library  /me 200
+/liked    /playlist 200
+/charts   /chartstosee 200
+/recent   /recentplayed   200
 
