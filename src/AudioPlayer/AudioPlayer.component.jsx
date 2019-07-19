@@ -158,7 +158,7 @@ function AudioPlayer() {
                 class="Image"
                 style={{
                   backgroundImage:
-                    'https://apkdl.in/apkimage/51MDy8ePKl1XLi8ZizQK28OqOwvfq8LmMPz9OyJA1zsVnrSH6AJZ-BGJPeFhDe1Yp7nl=rw',
+                    "url('https://apkdl.in/apkimage/51MDy8ePKl1XLi8ZizQK28OqOwvfq8LmMPz9OyJA1zsVnrSH6AJZ-BGJPeFhDe1Yp7nl=rw')",
                 }}
               />
             )}
