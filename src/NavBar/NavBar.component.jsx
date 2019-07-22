@@ -48,20 +48,20 @@ function NavBar() {
         </div>
         <div className="RecentlyPlayed-content">
           <div className="RecentlyPlayed-list">
-            {recentSongs.slice(0, 6).map(song => {
+            {recentSongs.slice(0, 3).map(song => {
               return (
                 <div className=" RecentlyPlayed-list-names">
                   <div className="flex RecentlyPlayed-name-container">
                     <span className="RecentlyPlayed-name">
                       {song.name}
-                      {recentSongs[0].songId === song.songId ? (
+                      {recentSongs[0].id === song.id ? (
                         <i className="fal fa-volume-up" />
                       ) : (
                         ''
                       )}
                     </span>
                   </div>
-                  <p className="RecentlyPlayed-type">{song.content}</p>
+                  <p className="RecentlyPlayed-type">{song.type}</p>
                 </div>
               );
             })}

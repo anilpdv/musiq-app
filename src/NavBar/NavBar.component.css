@@ -6,7 +6,7 @@
 .side-nav {
   z-index: 1;
   top: 0;
-  width: 245px;
+  width: 230px;
   left: 0;
   overflow: hidden;
   z-index: 9;
@@ -76,7 +76,9 @@
   font-weight: 700;
   line-height: 20px;
   letter-spacing: 0.015em;
+  padding: 0;
   padding-left: 20px;
+  width: 200px;
 }
 
 .RecentlyPlayed-list-names {
@@ -86,10 +88,14 @@
 .RecentlyPlayed-name-container i {
   font-size: 11px;
   text-align: end;
+  padding: 0;
+  padding-left: 10px;
 }
 
+
+
 .RecentlyPlayed-name {
-  font-size: 13px;
+  font-size: 12px;
   text-transform: capitalize;
   letter-spacing: 0.01em;
   overflow: hidden;
@@ -105,6 +111,8 @@
   font-size: 13px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
+  padding: 0;
+  margin: 0;
 }
 
 @media (max-width: 800px) {

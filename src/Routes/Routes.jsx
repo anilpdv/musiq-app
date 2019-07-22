@@ -8,6 +8,7 @@ import RecentSongsViewer from '../RecentSongsViewer/RecentSongsViewer.component'
 import PlaylistViewer from '../PlaylistViewer/PlaylistViewer.component';
 import ChartViewer from '../ChartViewer/ChartViewer.component';
 import NewReleaseViewer from '../NewReleaseViewer/NewReleaseViewer.component';
+import Generes from '../Generes/Generes.component';
 
 const Routes = props => {
   return (
@@ -20,7 +21,9 @@ const Routes = props => {
       <Route exact path="/liked" render={() => <Library />} />
       <Route exact path="/playlist" render={() => <PlaylistViewer />} />
       <Route exact path="/charts" render={() => <ChartViewer />} />
+
       <Route exact path="/newrelease" render={() => <NewReleaseViewer />} />
+      <Route exact path="/geners" render={() => <Generes />} />
     </Switch>
   );
 };
