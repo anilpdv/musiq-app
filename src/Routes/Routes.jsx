@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import React, {useState} from 'react';
+import {Switch, Route, Redirect} from 'react-router-dom';
 import Input from '../Input/Input.component';
 import Playlist from '../Playlist/Playlist.component';
 import Queue from '../Queue/Queue.component';
