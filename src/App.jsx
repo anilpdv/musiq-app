@@ -1,5 +1,4 @@
 import React from 'react';
-
 import model from './Redux/model';
 import { StoreProvider, createStore } from 'easy-peasy';
 import NavBar from './NavBar/NavBar.component';
