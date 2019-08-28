@@ -36,7 +36,7 @@ export default {
   }),
   fetchSongs: thunk(async (actions, payload) => {
     const res = await Axios(
-      'https://musiq-app-0396.appspot.com/api/related/' + payload.id,
+      'https://warm-springs-86808.herokuapp.com/api/related/' + payload.id,
     );
     let songs = await res.data;
     songs = transformPlayable(songs.items);
@@ -45,7 +45,8 @@ export default {
   }),
   fetchPlaylist: thunk(async (actions, payload) => {
     const res = await Axios(
-      'https://musiq-app-0396.appspot.com/api/playlist/' + payload.playlistId,
+      'https://warm-springs-86808.herokuapp.com/api/playlist/' +
+        payload.playlistId,
     );
     let songs = await res.data.playlist;
     songs = transformPlaylistPlayable(songs);

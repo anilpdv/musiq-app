@@ -1,10 +1,10 @@
-import React, { useState, useContext } from 'react';
-import { css } from '@emotion/core';
-import { useSpring, animated } from 'react-spring';
-import { BounceLoader } from 'react-spinners';
-import { lrtrim, removeb } from '../utils/helper';
+import React, {useState, useContext} from 'react';
+import {css} from '@emotion/core';
+import {useSpring, animated} from 'react-spring';
+import {BounceLoader} from 'react-spinners';
+import {lrtrim, removeb} from '../utils/helper';
 import './Song.component.css';
-import { useActions } from 'easy-peasy';
+import {useActions} from 'easy-peasy';
 
 const override = css`
    {
@@ -18,7 +18,7 @@ function Song(props) {
   const [icon, setIcon] = useState(false);
   const [downloadIcon, setDownloadIcon] = useState(false);
   const addSongsToLocalStorage = useActions(
-    actions => actions.addSongsToLocalStorage
+    actions => actions.addSongsToLocalStorage,
   );
   const fetchSongs = useActions(actions => actions.fetchSongs);
 
@@ -32,22 +32,22 @@ function Song(props) {
 
   const contentProps = useSpring({
     from: {
-      opacity: 0
+      opacity: 0,
     },
     to: {
-      opacity: 1
-    }
+      opacity: 1,
+    },
   });
 
-  const { author, title } = removeb(props.song.snippet.title);
+  const {author, title} = removeb(props.song.snippet.title);
   const song = {
     id: props.song.id.videoId,
     name: title,
     singer: author,
     img: props.song.snippet.thumbnails.default.url,
-    src: `https://musiq-app-0396.appspot.com/api/listen/${
+    src: `https://warm-springs-86808.herokuapp.com/api/listen/${
       props.song.id.videoId
-    }`
+    }`,
   };
 
   return (
@@ -77,7 +77,7 @@ function Song(props) {
         <p
           className="song-title text-white pl-5"
           onClick={() => {
-            fetchSongs({ id: props.song.id.videoId, song });
+            fetchSongs({id: props.song.id.videoId, song});
             addSongsToLocalStorage([
               {
                 id: props.song.id.videoId,
@@ -88,23 +88,21 @@ function Song(props) {
                 img: `https://img.youtube.com/vi/${
                   props.song.id.videoId
                 }/sddefault.jpg`,
-                src: `https://musiq-app-0396.appspot.com/api/listen/${
+                src: `https://warm-springs-86808.herokuapp.com/api/listen/${
                   props.song.id.videoId
-                }`
-              }
+                }`,
+              },
             ]);
           }}
           onMouseOver={changeIcon}
-          onMouseLeave={changeIcon}
-        >
+          onMouseLeave={changeIcon}>
           {title}{' '}
         </p>
         <a
-          href={`https://musiq-app-0396.appspot.com/api/download/${
+          href={`https://warm-springs-86808.herokuapp.com/api/download/${
             props.song.id.videoId
           }/song/${lrtrim(title)}`}
-          download
-        >
+          download>
           <i
             className={
               downloadIcon

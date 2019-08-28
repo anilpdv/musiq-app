@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import Axios from 'axios';
 
 import Entities from 'html-entities';
@@ -23,7 +23,7 @@ function removeTitle(songs) {
   return filteredSongs;
 }
 
-const baseUrl = 'https://musiq-app-0396.appspot.com';
+const baseUrl = 'https://warm-springs-86808.herokuapp.com';
 const Input = props => {
   const [value, setValue] = useState('');
 
@@ -50,8 +50,7 @@ const Input = props => {
         <form
           action="
     "
-          onSubmit={handleSubmit}
-        >
+          onSubmit={handleSubmit}>
           <input
             id="docsearch"
             className="transition  shadow-md   outline-none  border  border-transparent    appearance-none leading-normal ds-input "
